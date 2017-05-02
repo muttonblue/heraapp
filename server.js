@@ -1,19 +1,10 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-var express = require('./server-conf/config');
-
-var app = express();
-// var server = app.listen(8081, function () {
-//    var host = server.address().address;
-//    var port = server.address().port;
-//    console.log(">>>>> Start Service listening at http://%s:%s", host, port)
-// })
+const app = require('./server-conf/config'); 
 
 app.listen(process.env.PORT || 3000, function(){
-  console.log("#Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  console.log("#Start Service Express listening on port %d in %s mode", this.address().port, app.settings.env);
 });
-
-module.exports=app;
 
 // heroku
 // https://id.heroku.com/login
@@ -22,4 +13,3 @@ module.exports=app;
 // command :
 // $heroku logs --tail
 // $git push heroku master
-//
