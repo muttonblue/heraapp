@@ -6,6 +6,28 @@ herapp mockup + React
 ## Tools.
 1. [Atom]()
 
+## Build
+# Build to 'build' directory (it's ignored by git, see .gitignore)
+npm run build
+# Start the express.js app
+node server
+
+## [Setup heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
+
+# Run this from your terminal.
+# The following will add our apt repository and install the CLI:
+sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
+curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install heroku
+
+
+#View logs
+ $ heroku logs --tail
+
+#Run the app locally http://localhost:5000/
+ $ heroku local web
+
 
 # Basic writing and formatting syntax
 https://help.github.com/articles/basic-writing-and-formatting-syntax/#headings

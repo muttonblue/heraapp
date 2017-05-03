@@ -26,8 +26,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:server": "node server",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:mocha": "mocha test",
     "eject": "react-scripts eject"
   }
 }
