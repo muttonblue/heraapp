@@ -28,6 +28,8 @@ sudo apt-get install heroku
 #Run the app locally http://localhost:5000/
  $ heroku local web
 
+# UI
+[react.semantic-ui](https://react.semantic-ui.com/usage)
 
 # Basic writing and formatting syntax
 https://help.github.com/articles/basic-writing-and-formatting-syntax/#headings
