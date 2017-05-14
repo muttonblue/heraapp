@@ -1,9 +1,10 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
-import Header from './Layout/Header.js';
-import Footer from './Layout/Footer.js';
+import Header from './../Components/Layout';
 import { Button } from 'react-bootstrap';
 import './style.css';
+import './style-scss.scss';
+
 
 export default class Login extends Component {
    static propTypes = {}
@@ -15,8 +16,7 @@ export default class Login extends Component {
     return (
       <div className={classnames('Login', className)} {...props}>
         <Header/>
-        <h1> LLLLLLLLLLLLLLLLLLLL</h1>
-        <Footer name = "xxx" />
+        <h1> Welcome to Hera</h1>
       </div>
     );
   }
