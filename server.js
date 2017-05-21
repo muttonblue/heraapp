@@ -5,7 +5,6 @@ const app = require('./server-conf/config');
 app.listen(process.env.PORT || 3000, function(){
   console.log("#Start Service Express listening on port %d in %s mode", this.address().port, app.settings.env);
   console.log('homepage: https://heraapp-mockup.herokuapp.com/ ')
-
 });
 
 // heroku

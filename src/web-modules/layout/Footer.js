@@ -5,16 +5,20 @@ export default class Footer extends Component {
     super();
     this.state = {
       name: "Muttonblue",
-      count: 0
+      count: 0,
+      version :"0.0.1"
     };
   }
 
   render() {
     return (
-      <div>
-        <p> +++++++++ Footer Header+++++++++++ </p>
-        <p> {this.state.name} : {this.state.count} </p>
-      </div>
+        <footer className="footer">
+          <div className="footer-container">
+            <p> Herapp Mockup v. {this.state.version}</p>
+            <p> {this.state.name} : {this.state.count} </p>
+          </div>
+        </footer>
+
     );
   }
 }

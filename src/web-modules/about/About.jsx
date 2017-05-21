@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import classnames from 'classnames';
-import {Button} from 'react-bootstrap';
+// import {Button} from 'react-bootstrap';
 // import './style.css';
 
 export default class About extends Component {
