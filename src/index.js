@@ -1,28 +1,27 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
-import Routes from './routes';
-import {Header, Footer} from './web-modules/layout';
-import './index.css';
+import React, { Component } from 'react'
+import { render } from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
+import Root from './containers/Root'
+import routes from './routes'
 
-class SuperRoot extends Component {
-  constructor() {
-    super();
-    console.log("ROOTss");
+const rootEl = document.getElementById('app')
+render(
+  <AppContainer> 
+    <Root /> 
+  </AppContainer>, 
+  rootEl 
+)
+
+if (module.hot) {
+    module.hot.accept('./containers/Root', () => {
+      const NextRootApp = require('./containers/Root').default
+      render(
+        <AppContainer>
+           <NextRootApp />
+        </AppContainer>,
+        rootEl
+      );
+    });
   }
 
-  render() {
-    return (
-      <div>
-        <Header actionName="SuperRoot"/>
-        <Footer/>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(
-  <SuperRoot/>, document.getElementById('super-root'));
-
-ReactDOM.render(
-  <Routes history={BrowserRouter}/>, document.getElementById('root'));
+// render(routes(), document.getElementById('app'))

@@ -1,10 +1,8 @@
 # heraapp
-herapp mockup + React
 
 ## install && run project.
 
-## Tools.
-1. [Atom](https://atom.io/)
+## Tools
 
 ## Build
 ### Build to 'build' directory (it's ignored by git, see .gitignore)
