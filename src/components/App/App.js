@@ -11,8 +11,10 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { FlashMessage } from "../../components";
 import styles from "./App.scss";
+//https://medium.com/the-many/adding-login-and-authentication-sections-to-your-react-or-react-native-app-7767fd251bd1
 
 class App extends Component {
+
   componentDidMount() {
     const { dispatch, currentURL, setRedirectUrl } = this.props;
     console.log("currentURL", currentURL);

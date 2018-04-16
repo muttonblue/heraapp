@@ -1,8 +1,7 @@
 import { createStore, applyMiddleware } from "redux";
-// import createLogger from "redux-logger";
+import { createLogger } from "redux-logger";
+import { routerMiddleware } from "react-router-redux";
 import rootReducer from "../reducers";
-
-// const logger = createLogger();
 
 const thunk = store => next => action =>
   typeof action === "function"
@@ -17,8 +16,13 @@ const promise = store => {
   };
 };
 
-export default () => {
-  const middlewares = [thunk];
+export default history => {
+  const middlewares = [thunk, routerMiddleware(history)];
+
+  process.env.NODE_ENV !== "production"
+    ? middlewares.push(createLogger())
+    : console.info("[redux-logger]:::production mode");
+
   const store = createStore(rootReducer, applyMiddleware(...middlewares));
   // store.dispatch = promise(store)
 

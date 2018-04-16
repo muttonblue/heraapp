@@ -5,24 +5,27 @@ import {
   Route,
   Redirect,
   IndexRoute,
-  browserHistory
+  browserHistory,
+  hashHistory
 } from "react-router";
-import { BrowserRouter } from "react-router-dom";
 import { Pages, Users, ShowPage, NewPage } from "./containers";
 import {
   App,
+  Security,
   Login,
   Home,
   OfficeDev,
   MaterialUI,
   Reactstrap,
-  SemanticUI,
-  EnsureLoggedInContainer
+  SemanticUI
 } from "./components";
 
 const menu = [{ path: "login", indexRoute: Login }];
 
-export default () => {
+export default (store, history) => {
+  console.log("@history :: " , history);
+  console.log("@browserHistory :: " , browserHistory);
+ 
   return (
     <Router history={browserHistory}>
       <Route path="/heraapp" component={App}>
@@ -33,7 +36,7 @@ export default () => {
         <route path="login">
           <IndexRoute component={Login} />
         </route>
-        <Route component={EnsureLoggedInContainer}>
+        <Route component={Security}>
           <route path="pages">
             <IndexRoute component={Pages} />
             <Route path=":id" component={ShowPage} />

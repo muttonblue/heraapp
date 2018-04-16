@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as ReactDOM from "react-dom";
-import { Route, Redirect } from 'react-router'
+import { Route, Redirect } from "react-router";
 import {
   Button,
   Form,
@@ -15,7 +15,7 @@ import Styles from "./LoginStyle";
 
 export default class LoginView extends Component {
   render() {
-    const { login, onSign } = this.props;
+    const { login, onSign, onHome } = this.props;
     return (
       <Form style={{ alignItems: "center", maxWidth: "400px" }}>
         <FormGroup>
@@ -33,6 +33,9 @@ export default class LoginView extends Component {
         </FormGroup>
         <Button color="info" onClick={() => onSign(login)}>
           {(login.isLogin && "Sign Out") || "Sign In"}
+        </Button>
+        <Button color="info" onClick={() => onHome()}>
+          Home
         </Button>
       </Form>
     );

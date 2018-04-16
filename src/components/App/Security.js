@@ -8,7 +8,7 @@ import {
   browserHistory
 } from "react-router";
 
-class EnsureLoggedInContainer extends React.Component {
+class Security extends React.Component {
   componentDidMount() {
     const { dispatch, currentURL,setRedirectUrl } = this.props; 
     console.log("currentURL" , currentURL);
@@ -35,4 +35,4 @@ function mapStateToProps(state, ownProps) {
   };
 }
 
-export default connect(mapStateToProps)(EnsureLoggedInContainer);
+export default connect(mapStateToProps)(Security);

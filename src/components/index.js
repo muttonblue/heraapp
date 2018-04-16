@@ -1,5 +1,5 @@
 export App from "./App/App";
-export EnsureLoggedInContainer from "./App/EnsureLoggedInContainer";
+export Security from "./App/Security";
 export Home from "./Home";
 export Login from "./Login/LoginContainer";
 export FlashMessage from "./FlashMessage/index";
