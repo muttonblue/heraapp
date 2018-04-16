@@ -1,15 +1,12 @@
 # heraapp
 
 ## install && run project.
+command:
+  $ yarn
 
-## Tools
+### Run Application
+  $ yarn start
 
-## Build
-### Build to 'build' directory (it's ignored by git, see .gitignore)
- $ npm run build
-
-### Start the express.js app
-  $ node server
 
 ## [Setup heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
 
