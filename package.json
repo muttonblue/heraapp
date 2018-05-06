@@ -6,8 +6,7 @@
   "scripts": {
     "start": "npm-run-all --parallel start-dev-api start-dev-ui",
     "start-dev-ui": "webpack-dev-server",
-    "start-dev-api":
-      "json-server --watch api/db.js --routes api/routes.json --port 5000",
+    "start-dev-api": "json-server --watch api/db.js --routes api/routes.json --port 5000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "git+https://github.com/muttonblue/genesisapp.git",
@@ -51,7 +50,7 @@
     "office-ui-fabric-react": "^5.81.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-    "react-redux": "^5.0.6",
+    "react-redux": "^5.0.7",
     "react-router": "^3.2.0",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.9",

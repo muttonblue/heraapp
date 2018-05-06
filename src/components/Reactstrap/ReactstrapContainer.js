@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import View from "./ReactstrapView";
 
 const mapStateToProps = state => ({
-  pages: state.pages
+  pages: state.pages,
+  login : state.login
 });
 
 const mapDispatchToProps = dispatch => ({

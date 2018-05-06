@@ -1,5 +1,6 @@
 // import React, { Component } from 'react'
 import * as React from "react";
+import { connect } from "react-redux";
 import * as ReactDOM from "react-dom";
 import { Button as Button3 } from "reactstrap";
 import { Fabric } from "office-ui-fabric-react/lib/Fabric";
@@ -14,23 +15,35 @@ import {
 } from "office-ui-fabric-react/lib/Dialog";
 import Button from "material-ui/Button";
 import TextField from "material-ui/TextField";
-import { initializeIcons } from '@uifabric/icons';
+import { initializeIcons } from "@uifabric/icons";
 import styles from "./Home.scss";
 
 class Home extends React.Component {
   constructor() {
     super();
     this.state = {
-      isOpen: false
+      isOpen: false,
+      texts: "ccc"
     };
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state.texts !== nextState.texts;
+  }
+  componentDidUpdate() {
+      
   }
 
   open = () => this.setState({ isOpen: true });
 
   close = () => this.setState({ isOpen: false });
 
+  testPerf() {
+    event.preventDefault();
+    this.setState({ isOpen: true, texts: "rrrrr" });
+  }
   officeFabric() {
-    initializeIcons('https://my.cdn.com/path/to/icons/');
+    initializeIcons("https://my.cdn.com/path/to/icons/");
     return (
       <Fabric className="App">
         <div style={{ margin: "5em" }}>
@@ -59,12 +72,23 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        {this.officeFabric()}
-        <Button3 color="danger">Danger!</Button3>
-        <Button3 color="info">reactstrap</Button3>{" "}
-        <Button variant="raised" color="primary">
-          Hello World
-        </Button>
+        {/* {this.officeFabric()} */}
+        <label>LOG:::: { JSON.stringify(this.props)}</label>
+        <div>
+          <Button3 color="danger">Danger!</Button3>
+        </div>
+        <div>
+          <Button3 color="info">reactstrap</Button3>{" "}
+        </div>
+        <div>
+          <Button
+            variant="raised"
+            color="primary"
+            onClick={this.testPerf.bind(this)}
+          >
+            Hello World
+          </Button>
+        </div>
       </div>
 
       // <h2 className={styles['title']}>
@@ -74,4 +98,15 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+// export default Home;
+
+function mapStateToProps(state, ownProps) {
+  return {
+    login: state.login,
+    isLoggedIn: state.login.isLogin,
+    currentURL: ownProps.location.pathname
+  };
+}
+
+export default connect(mapStateToProps, null)(Home);
+

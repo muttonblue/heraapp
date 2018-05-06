@@ -23,9 +23,8 @@ import {
 const menu = [{ path: "login", indexRoute: Login }];
 
 export default (store, history) => {
-  console.log("@history :: " , history);
-  console.log("@browserHistory :: " , browserHistory);
- 
+//   console.log("@history :: " , history);
+//   console.log("@browserHistory :: " , browserHistory);
   return (
     <Router history={browserHistory}>
       <Route path="/heraapp" component={App}>

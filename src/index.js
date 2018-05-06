@@ -24,5 +24,4 @@ if (module.hot) {
     );
   });
 }
-
 // render(routes(), document.getElementById('app'))

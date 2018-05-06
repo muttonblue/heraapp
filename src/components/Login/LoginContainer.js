@@ -10,19 +10,15 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onSign(login) {
-    console.log("onSign::", login);
     let _login = { ...login };
     _login.username = "muttonblue";
     _login.isLogin = true;
     _login.fullname = "John Rambo";
 
-    dispatch({
-      type: "LOAD_PAGES_SUCCESS",
-      pages: [],
-      flashMessage: { msg: "ทำการค้นหาเรียบร้อย", type: "ERROR" }
-    });
-    // dispatch({ type: "LOGIN/SIGN", login : _login});
-    dispatch(signIn(_login));
+    dispatch({type: "LOAD_PAGES_SUCCESS", pages: [], flashMessage: { msg: "ทำการค้นหาเรียบร้อย", type: "ERROR" } });
+    dispatch({ type: "LOGIN/SIGN", login : _login});
+    // dispatch(signIn(_login));
+    dispatch(push("/heraapp/home"));
   },
   onHome() {
     dispatch(push("/heraapp/pages"));

@@ -14,6 +14,7 @@ class ReactstrapView extends Component {
   render() {
     return (
       <div>
+      <label>>> :: {JSON.stringify(this.props.login)}</label>
         <Jumbotron>
           <h1 className="display-3">Hello, world!</h1>
           <p className="lead">
