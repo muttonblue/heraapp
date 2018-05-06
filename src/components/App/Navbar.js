@@ -27,7 +27,7 @@ const links = [
   { pathname: `/${MODULE_NAME}/Reactstrap`, name: "reactstrap" },
   { pathname: `/${MODULE_NAME}/SemanticUI`, name: "SemanticUI" }
 ];
-
+// this.props.router.push('/heraapp/users')
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -37,11 +37,14 @@ class Header extends Component {
       isOpen: false
     };
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
   }
+
+
 
   renderNavbarBrand() {
     const { login } = this.props;
@@ -59,7 +62,6 @@ class Header extends Component {
     const { login , history} = this.props;
     return (
       <Nav className="ml-auto" navbar>
-
         <NavItem>
           <NavLink href="https://github.com/muttonblue/heraapp.git">
             GitHub
@@ -68,13 +70,9 @@ class Header extends Component {
         {links.map((item,index) => {
           return (
             <NavItem key={index}>
-                <button
-                    onClick={() => {
-                        // use `this.props.router.push('/some/path')` here
-                        this.props.router.push('/heraapp/users')
-                    }}
-                >xx</button>
-              <NavLink href={item.pathname}>{item.name} </NavLink>
+              <NavLink href="#" onClick={() => this.props.router.push(item.pathname)}>
+                {item.name} 
+              </NavLink>
             </NavItem>
           );
         })}
@@ -99,32 +97,8 @@ class Header extends Component {
       <div>
         <Navbar light expand="md">
           {this.renderNavbarBrand()}
-          <label>history : {JSON.stringify(history)}</label>
-          <label>router : {JSON.stringify(router)}</label>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            {/* <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
-                </NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </Nav> */}
-
             {this.renderNavItem()}
           </Collapse>
         </Navbar>

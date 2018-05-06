@@ -8,12 +8,14 @@ import {
   browserHistory,
   hashHistory
 } from "react-router";
-import { Pages, Users, ShowPage, NewPage } from "./containers";
 import {
   App,
   Security,
   Login,
   Home,
+  Pages,
+  ShowPage,
+  Users,
   OfficeDev,
   MaterialUI,
   Reactstrap,
@@ -23,8 +25,8 @@ import {
 const menu = [{ path: "login", indexRoute: Login }];
 
 export default (store, history) => {
-//   console.log("@history :: " , history);
-//   console.log("@browserHistory :: " , browserHistory);
+  //   console.log("@history :: " , history);
+  //   console.log("@browserHistory :: " , browserHistory);
   return (
     <Router history={browserHistory}>
       <Route path="/heraapp" component={App}>

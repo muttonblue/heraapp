@@ -9,24 +9,17 @@ import {
 } from "react-router";
 
 class Security extends React.Component {
-  //   componentDidMount() {
-  //     const { dispatch, currentURL, setRedirectUrl } = this.props;
-  //     console.log("Security currentURL", currentURL);
-  //     console.log("Security componentDidMount", JSON.stringify(this.props));
-  //     // if (!this.props.isLoggedIn) {
-  //     //   browserHistory.replace("/heraapp/login");
-  //     // }
-  //   }
+  componentWillMount() {
+    const { dispatch, currentURL, setRedirectUrl } = this.props;
+    if (!this.props.isLoggedIn) {
+      browserHistory.replace("/heraapp/login");
+    }
+  }
 
   render() {
-    const { children } = this.props;
-
-    return (
-      <div>
-        <label>ccc : {JSON.stringify(this.props.login)}</label>
-        {children}
-      </div>
-    );
+    const { children, login } = this.props;
+    const isLogin = login && login.isLogin ? true : false;
+    return (isLogin && children) || <div>not permission</div>;
   }
 }
 

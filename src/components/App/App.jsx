@@ -18,7 +18,7 @@ class App extends Component {
   componentDidMount() {
     const { dispatch, currentURL, setRedirectUrl } = this.props;
     if (!this.props.isLoggedIn) {
-    //   browserHistory.replace("/heraapp/login");
+      browserHistory.replace("/heraapp/login");
     }
   }
 

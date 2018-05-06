@@ -30,9 +30,7 @@ class Home extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
     return this.state.texts !== nextState.texts;
   }
-  componentDidUpdate() {
-      
-  }
+  componentDidUpdate() {}
 
   open = () => this.setState({ isOpen: true });
 
@@ -73,7 +71,6 @@ class Home extends React.Component {
     return (
       <div>
         {/* {this.officeFabric()} */}
-        <label>LOG:::: { JSON.stringify(this.props)}</label>
         <div>
           <Button3 color="danger">Danger!</Button3>
         </div>
@@ -109,4 +106,3 @@ function mapStateToProps(state, ownProps) {
 }
 
 export default connect(mapStateToProps, null)(Home);
-
